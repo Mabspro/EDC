@@ -1,0 +1,23 @@
+{
+  "name": "edc-consulting-website",
+  "version": "1.0.0",
+  "description": "Excellence Data Consulting LLC - Professional website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html",
+    "start": "live-server --port=3000 --open=/index.html",
+    "serve": "http-server -p 3000 -o"
+  },
+  "keywords": [
+    "data-consulting",
+    "website",
+    "static-site"
+  ],
+  "author": "Excellence Data Consulting LLC",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1"
+  }
+}
+

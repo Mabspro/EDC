@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            background: linear-gradient(135deg, #0B163F, #780116);
             z-index: 2000;
             transition: width 0.1s ease;
         `;
@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const style = document.createElement('style');
 style.textContent = `
     .nav-link.active {
-        color: #1e40af !important;
+        color: #0B163F !important;
     }
     
     .nav-link.active::after {

@@ -693,7 +693,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-features li {
-    color: #475569;
+    color: var(--color-text-light);
     margin-bottom: 0.5rem;
     position: relative;
     padding-left: 1.5rem;
@@ -779,7 +779,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Contact Section */
 .contact {
     padding: 100px 0;
-    background: #f8fafc;
+    background: var(--color-cream);
 }
 
 .contact-content {
@@ -791,12 +791,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-info h3 {
     font-size: 1.8rem;
-    color: #1e293b;
+    color: var(--color-navy);
     margin-bottom: 0.5rem;
 }
 
 .contact-info > p {
-    color: #64748b;
+    color: var(--color-text-light);
     margin-bottom: 2rem;
     font-size: 1.1rem;
 }

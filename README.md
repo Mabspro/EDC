@@ -119,11 +119,31 @@ The development server includes:
 - Proper static file serving
 
 ### Production Deployment
-The website consists of static files and can be deployed to any web hosting service:
-- **GitHub Pages**: Push to repository and enable Pages
-- **Netlify**: Drag and drop the folder
-- **Vercel**: Connect repository for automatic deployments
-- **Traditional Hosting**: Upload files via FTP
+
+#### GitHub Repository
+The project is connected to: [https://github.com/Mabspro/EDC.git](https://github.com/Mabspro/EDC.git)
+
+To push changes:
+```bash
+git add .
+git commit -m "Your commit message"
+git push origin main
+```
+
+#### Vercel Deployment (Recommended)
+1. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+2. Click "Add New Project" and import the `Mabspro/EDC` repository
+3. Vercel will auto-detect the static site configuration
+4. Click "Deploy" - automatic deployments on every push to `main`
+
+The `vercel.json` configuration file is already included for optimal deployment.
+
+#### Other Deployment Options
+- **GitHub Pages**: Push to repository and enable Pages in settings
+- **Netlify**: Connect GitHub repository or drag and drop
+- **Traditional Hosting**: Upload files via FTP (ensure folder structure is maintained)
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ### Browser Support
 - Chrome 70+

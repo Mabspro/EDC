@@ -293,6 +293,11 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-navy);
 }
 
+.hero-title [data-en],
+.hero-title [data-fr] {
+    transition: opacity 0.3s ease;
+}
+
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--color-text-light);

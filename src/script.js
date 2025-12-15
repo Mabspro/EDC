@@ -13,6 +13,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Language toggle functionality
+    function switchLanguage(lang) {
+        // Update all elements with data-en and data-fr attributes
+        document.querySelectorAll('[data-en][data-fr]').forEach(element => {
+            if (lang === 'fr') {
+                // Handle elements with HTML content (like hero title with gradient-text)
+                if (element.innerHTML.includes('gradient-text')) {
+                    const frText = element.getAttribute('data-fr');
+                    element.innerHTML = frText.replace(/<span class='gradient-text'>/g, '<span class="gradient-text">');
+                } else {
+                    element.textContent = element.getAttribute('data-fr');
+                }
+            } else {
+                // Handle elements with HTML content
+                if (element.innerHTML.includes('gradient-text')) {
+                    const enText = element.getAttribute('data-en');
+                    element.innerHTML = enText.replace(/<span class='gradient-text'>/g, '<span class="gradient-text">');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            }
+        });
+        
+        // Update page language attribute
+        document.documentElement.lang = lang;
+        const htmlLang = document.getElementById('html-lang');
+        if (htmlLang) {
+            htmlLang.lang = lang;
+        }
+    }
+    
+    // Initialize language on page load
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    switchLanguage(savedLang);
+    langButtons.forEach(btn => {
+        if (btn.dataset.lang === savedLang) {
+            btn.classList.add('active');
+        }
+    });
+    
     // Language toggle
     langButtons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -22,9 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
             langButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             
-            // You can add language switching logic here
-            // For now, it just stores the preference
-            console.log('Language preference set to:', selectedLang);
+            // Switch language content
+            switchLanguage(selectedLang);
         });
     });
     

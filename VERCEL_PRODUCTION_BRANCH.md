@@ -8,16 +8,23 @@
 
 ## How to Set/Verify Production Branch
 
-### Option 1: In Vercel Dashboard (Recommended)
+### ✅ Found It! Production Branch is in Environments
+
+The production branch is configured in **Settings → Environments**, not in Git settings.
+
+**Current Status (Verified):**
+- **Production Environment**: Branch Tracking = **`main`** ✅
+- **Preview Environment**: All unassigned git branches
+- **Development Environment**: Accessible via CLI
+
+### To View/Edit Production Branch:
 
 1. Go to your Vercel project dashboard
 2. Click **Settings** (gear icon or from left sidebar)
-3. Click **Git** in the left sidebar
-4. Look for **"Production Branch"** section
-5. If it's not set or shows a different branch:
-   - Click **Edit** or the dropdown
-   - Select **`main`** from the list
-   - Save the changes
+3. Click **Environments** in the left sidebar
+4. You'll see the **Production** environment with **Branch Tracking: `main`**
+5. To change it, click **Edit** on the Production environment
+6. Select the branch you want (should be `main`)
 
 ### Option 2: Check General Settings
 
@@ -50,10 +57,11 @@ Vercel automatically deploys when you:
 
 ## Verification Checklist
 
-- [ ] Repository connected: `Mabspro/EDC` ✅
-- [ ] Production deployment shows source: `main` ✅
-- [ ] Settings → Git → Production Branch = `main` (verify this)
-- [ ] Latest commit deployed: `24342cf` ✅
+- [x] Repository connected: `Mabspro/EDC` ✅
+- [x] Production deployment shows source: `main` ✅
+- [x] Settings → Environments → Production Branch Tracking = `main` ✅ **VERIFIED**
+- [x] Latest commit deployed: `96b1ab2` ✅
+- [x] Production domain: `edc-dusky.vercel.app` ✅
 
 ## If Production Branch Setting is Missing
 
@@ -95,9 +103,13 @@ The deployment is working, but showing 404. This is likely because:
 
 ## Summary
 
-- ✅ Repository is connected correctly
-- ✅ Deployments are coming from `main` branch
-- ⚠️ Verify Production Branch setting in Settings → Git
-- ⚠️ Deployment hooks are optional (not needed)
-- ⚠️ Fix 404 by checking Build & Deployment settings
+- ✅ Repository is connected correctly: `Mabspro/EDC`
+- ✅ Production branch is set to `main` (verified in Environments)
+- ✅ Production domain: `edc-dusky.vercel.app`
+- ✅ Deployment hooks are optional (not needed for automatic deployments)
+- ⚠️ **Still need to fix 404 error** - Check **Settings → Build and Deployment**
+  - Framework Preset: "Other" or blank
+  - Build Command: **EMPTY** (critical for static sites)
+  - Output Directory: **EMPTY**
+  - Root Directory: `./` (default)
 

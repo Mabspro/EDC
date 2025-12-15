@@ -1,9 +1,9 @@
 // Smooth scrolling and navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Language selector functionality
     const langButtons = document.querySelectorAll('.lang-btn');
     const currentLang = localStorage.getItem('preferredLanguage') || 'en';
-    
+
     // Set initial language
     langButtons.forEach(btn => {
         if (btn.dataset.lang === currentLang) {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.classList.remove('active');
         }
     });
-    
+
     // Language toggle functionality
     function switchLanguage(lang) {
         // Update all elements with data-en and data-fr attributes
@@ -35,7 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-        
+
+        // Update placeholders for inputs and textareas
+        document.querySelectorAll('input[data-en], textarea[data-en]').forEach(element => {
+            if (lang === 'fr') {
+                element.setAttribute('placeholder', element.getAttribute('data-fr'));
+            } else {
+                element.setAttribute('placeholder', element.getAttribute('data-en'));
+            }
+        });
+
         // Update page language attribute
         document.documentElement.lang = lang;
         const htmlLang = document.getElementById('html-lang');
@@ -43,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             htmlLang.lang = lang;
         }
     }
-    
+
     // Initialize language on page load
     const savedLang = localStorage.getItem('preferredLanguage') || 'en';
     switchLanguage(savedLang);
@@ -52,21 +61,21 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.classList.add('active');
         }
     });
-    
+
     // Language toggle
     langButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const selectedLang = this.dataset.lang;
             localStorage.setItem('preferredLanguage', selectedLang);
-            
+
             langButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Switch language content
             switchLanguage(selectedLang);
         });
     });
-    
+
     // Navigation elements
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
@@ -74,10 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
 
     // Mobile menu toggle
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', function () {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
-        
+
         // Animate hamburger bars
         const bars = hamburger.querySelectorAll('.bar');
         if (hamburger.classList.contains('active')) {
@@ -96,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
-            
+
             const bars = hamburger.querySelectorAll('.bar');
             bars[0].style.transform = 'none';
             bars[1].style.opacity = '1';
@@ -105,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Navbar scroll effect
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -115,20 +124,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             // Check if link points to another page (contains .html)
             if (href.includes('.html')) {
                 // Allow default navigation to another page
                 return;
             }
-            
+
             // Handle same-page anchor links
             e.preventDefault();
             const targetId = href;
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
                 window.scrollTo({
@@ -145,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -202,9 +211,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Contact form handling
     const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         // Get form data
         const formData = new FormData(contactForm);
         const name = formData.get('name');
@@ -287,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
             margin-left: 1rem;
             padding: 0;
         `;
-        
+
         closeBtn.addEventListener('click', () => {
             notification.style.transform = 'translateX(400px)';
             setTimeout(() => notification.remove(), 300);
@@ -331,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
         charts.forEach((chart, index) => {
             chart.style.transform = 'translateY(20px)';
             chart.style.opacity = '0';
-            
+
             setTimeout(() => {
                 chart.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
                 chart.style.transform = 'translateY(0)';
@@ -342,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start chart animation when hero section is visible
     const heroSection = document.querySelector('.hero');
-    const heroObserver = new IntersectionObserver(function(entries) {
+    const heroObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 animateCharts();
@@ -353,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
     heroObserver.observe(heroSection);
 
     // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const scrolled = window.pageYOffset;
         const parallax = document.querySelector('.data-visualization');
         if (parallax) {
@@ -365,22 +374,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Button hover effects
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
+        button.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-2px)';
         });
-        
-        button.addEventListener('mouseleave', function() {
+
+        button.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0)';
         });
     });
 
     // Service card hover effects
     serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-10px) scale(1.02)';
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
@@ -388,11 +397,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Logo loading animation
     const logo = document.querySelector('.nav-logo .logo');
     if (logo) {
-        logo.addEventListener('load', function() {
+        logo.addEventListener('load', function () {
             this.style.opacity = '0';
             this.style.transform = 'scale(0.8)';
             this.style.transition = 'all 0.5s ease';
-            
+
             setTimeout(() => {
                 this.style.opacity = '1';
                 this.style.transform = 'scale(1)';

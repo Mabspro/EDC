@@ -18,20 +18,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update all elements with data-en and data-fr attributes
         document.querySelectorAll('[data-en][data-fr]').forEach(element => {
             if (lang === 'fr') {
-                // Handle elements with HTML content (like hero title with gradient-text)
-                if (element.innerHTML.includes('gradient-text')) {
-                    const frText = element.getAttribute('data-fr');
+                const frText = element.getAttribute('data-fr');
+                // Check if the data attribute contains HTML
+                if (frText.includes('<span') || frText.includes('<i') || frText.includes('<br')) {
                     element.innerHTML = frText.replace(/<span class='gradient-text'>/g, '<span class="gradient-text">');
                 } else {
-                    element.textContent = element.getAttribute('data-fr');
+                    element.textContent = frText;
                 }
             } else {
-                // Handle elements with HTML content
-                if (element.innerHTML.includes('gradient-text')) {
-                    const enText = element.getAttribute('data-en');
+                const enText = element.getAttribute('data-en');
+                // Check if the data attribute contains HTML
+                if (enText.includes('<span') || enText.includes('<i') || enText.includes('<br')) {
                     element.innerHTML = enText.replace(/<span class='gradient-text'>/g, '<span class="gradient-text">');
                 } else {
-                    element.textContent = element.getAttribute('data-en');
+                    element.textContent = enText;
                 }
             }
         });

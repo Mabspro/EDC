@@ -521,6 +521,93 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-dark);
 }
 
+/* Profile Credentials & Certifications */
+.profile-credentials {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(11, 22, 63, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.profile-credentials h4 {
+    font-size: 1.1rem;
+    color: var(--color-navy);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.certifications {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.certification-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--color-cream);
+    border-radius: 8px;
+    border: 1px solid rgba(11, 22, 63, 0.1);
+}
+
+.certification-badge {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.certification-item span {
+    color: var(--color-text-dark);
+    font-weight: 500;
+}
+
+/* Profile Social Links */
+.profile-social {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-cream);
+    border: 2px solid var(--color-navy);
+    border-radius: 8px;
+    color: var(--color-navy);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--color-navy);
+    color: var(--color-cream);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11, 22, 63, 0.2);
+}
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+.social-link span {
+    font-size: 0.95rem;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -896,6 +983,16 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
 }
 
+.footer-link {
+    color: rgba(254, 248, 236, 0.9);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-cream);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
@@ -1015,6 +1112,20 @@ h1, h2, h3, h4, h5, h6 {
     
     .profile-title {
         font-size: 1.1rem;
+    }
+    
+    .profile-credentials {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+    }
+    
+    .social-link {
+        width: 100%;
+        justify-content: center;
     }
     
     .about-content {

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Komi Modji - Full Profile | Excellence Data Consulting LLC</title>
+    <meta name="description" content="Complete professional profile and resume of Dr. Komi Modji, Founder & Principal Consultant at Excellence Data Consulting LLC.">
+    <link rel="stylesheet" href="src/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-page {
+            padding: 120px 0 80px;
+            background: var(--color-cream);
+            min-height: 100vh;
+        }
+        
+        .profile-page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .profile-page-header h1 {
+            font-size: 2.5rem;
+            color: var(--color-navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-navy);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--color-burgundy);
+            transform: translateX(-5px);
+        }
+        
+        .resume-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(11, 22, 63, 0.08);
+        }
+        
+        .resume-section h2 {
+            color: var(--color-navy);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--color-gold);
+        }
+        
+        .resume-section h3 {
+            color: var(--color-burgundy);
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resume-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--color-gold);
+        }
+        
+        .resume-item h4 {
+            color: var(--color-navy);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .resume-item .date {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-item ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .resume-item li {
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .credential-card {
+            background: var(--color-cream);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid rgba(11, 22, 63, 0.1);
+        }
+        
+        .credential-card h4 {
+            color: var(--color-navy);
+            margin-bottom: 0.75rem;
+        }
+        
+        .credential-card p {
+            color: var(--color-text-light);
+            margin: 0;
+        }
+        
+        .certification-display {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--color-cream);
+            border-radius: 12px;
+            margin-top: 1rem;
+        }
+        
+        .certification-display img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-page {
+                padding: 100px 0 60px;
+            }
+            
+            .profile-page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .resume-section {
+                padding: 1.5rem;
+            }
+            
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certification-display {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="public/images/Logo.png" alt="Excellence Data Consulting" class="logo">
+                <span class="company-name">Excellence Data Consulting</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#approach" class="nav-link">Our Approach</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Page Content -->
+    <section class="profile-page">
+        <div class="container">
+            <a href="index.html#about" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to About
+            </a>
+            
+            <div class="profile-page-header">
+                <h1>Dr. Komi Modji</h1>
+                <p class="profile-title">Founder & Principal Consultant</p>
+            </div>
+
+            <!-- Professional Summary -->
+            <div class="resume-section">
+                <h2>Professional Summary</h2>
+                <p>Dr. Komi Modji leads Excellence Data Consulting LLC with a vision to transform how organizations leverage data for strategic decision-making. With extensive expertise in evaluation services, data analytics, and public health, Dr. Modji has been empowering local health departments and businesses since 2018.</p>
+                <p>Specializing in evidence-based approaches, Dr. Modji brings a unique blend of technical excellence and collaborative methodology, ensuring that every project delivers meaningful, actionable insights that drive organizational success.</p>
+            </div>
+
+            <!-- Education -->
+            <div class="resume-section">
+                <h2>Education</h2>
+                <!-- Education content will be added from resume -->
+                <div class="resume-item">
+                    <h4>Doctorate Degree</h4>
+                    <p class="date">[Institution, Year]</p>
+                    <p>[Degree details - to be updated from resume]</p>
+                </div>
+                <!-- Add more education items as needed -->
+            </div>
+
+            <!-- Certifications -->
+            <div class="resume-section">
+                <h2>Certifications & Credentials</h2>
+                <div class="certification-display">
+                    <img src="public/images/CPH Certification Badge.png" alt="CPH Certification">
+                    <div>
+                        <h3>Certified in Public Health (CPH)</h3>
+                        <p>The CPH credential demonstrates expertise in public health sciences and practice, ensuring the highest standards of professional competency.</p>
+                    </div>
+                </div>
+                <!-- Add more certifications as needed -->
+            </div>
+
+            <!-- Professional Experience -->
+            <div class="resume-section">
+                <h2>Professional Experience</h2>
+                <div class="resume-item">
+                    <h4>Founder & Principal Consultant</h4>
+                    <p class="date">Excellence Data Consulting LLC | 2018 - Present</p>
+                    <ul>
+                        <li>Provide evaluation services to local health departments and businesses</li>
+                        <li>Develop custom dashboards using Tableau, PowerBI, and R</li>
+                        <li>Lead community health assessments and improvement planning</li>
+                        <li>Conduct program evaluations and strategic planning</li>
+                    </ul>
+                </div>
+                <!-- Add more experience items from resume -->
+            </div>
+
+            <!-- Key Skills & Expertise -->
+            <div class="resume-section">
+                <h2>Key Skills & Expertise</h2>
+                <div class="credentials-grid">
+                    <div class="credential-card">
+                        <h4>Data Visualization</h4>
+                        <p>Tableau, PowerBI, R (Shiny/Flexdashboard)</p>
+                    </div>
+                    <div class="credential-card">
+                        <h4>Program Evaluation</h4>
+                        <p>Strategic planning, process & outcome evaluation</p>
+                    </div>
+                    <div class="credential-card">
+                        <h4>Survey Development</h4>
+                        <p>Design, dissemination, and analysis</p>
+                    </div>
+                    <div class="credential-card">
+                        <h4>Health Assessment</h4>
+                        <p>Community health assessments and improvement plans</p>
+                    </div>
+                    <div class="credential-card">
+                        <h4>Data Analytics</h4>
+                        <p>Evidence-based decision making and analysis</p>
+                    </div>
+                    <div class="credential-card">
+                        <h4>Stakeholder Engagement</h4>
+                        <p>Collaborative methodology and partnership building</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publications & Research (if applicable) -->
+            <div class="resume-section">
+                <h2>Publications & Research</h2>
+                <p>[Publications and research details to be added from resume]</p>
+            </div>
+
+            <!-- Contact & Connect -->
+            <div class="resume-section">
+                <h2>Connect</h2>
+                <div class="social-links" style="justify-content: flex-start; margin-top: 1rem;">
+                    <a href="https://www.facebook.com/ExcellenceDataConsulting" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/komi-m-4712a464/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="public/images/Logo.png" alt="Excellence Data Consulting" class="logo">
+                    <span class="company-name">Excellence Data Consulting LLC</span>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 Excellence Data Consulting LLC. All rights reserved.</p>
+                    <p>Empowering evidence-based decisions since 2018</p>
+                    <p><a href="docs/Privacy Policy.docx" target="_blank" rel="noopener noreferrer" class="footer-link">Privacy Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/script.js"></script>
+</body>
+</html>
+

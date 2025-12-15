@@ -77,8 +77,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Check if link points to another page (contains .html)
+            if (href.includes('.html')) {
+                // Allow default navigation to another page
+                return;
+            }
+            
+            // Handle same-page anchor links
             e.preventDefault();
-            const targetId = this.getAttribute('href');
+            const targetId = href;
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {

@@ -1,5 +1,33 @@
 // Smooth scrolling and navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Language selector functionality
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+    
+    // Set initial language
+    langButtons.forEach(btn => {
+        if (btn.dataset.lang === currentLang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Language toggle
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const selectedLang = this.dataset.lang;
+            localStorage.setItem('preferredLanguage', selectedLang);
+            
+            langButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // You can add language switching logic here
+            // For now, it just stores the preference
+            console.log('Language preference set to:', selectedLang);
+        });
+    });
+    
     // Navigation elements
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');

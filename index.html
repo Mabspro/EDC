@@ -34,6 +34,10 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+            </div>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -53,6 +57,7 @@
                 <p class="hero-subtitle">
                     Transform your organization with evidence-based insights and strategic data consulting. 
                     Since 2018, we've been helping businesses and health departments make impactful decisions.
+                    <span class="bilingual-badge"><i class="fas fa-globe"></i> Services disponibles en anglais et en français</span>
                 </p>
                 <div class="hero-buttons">
                     <a href="#services" class="btn btn-primary">Explore Our Services</a>
@@ -366,8 +371,12 @@
                     <h3>Excellence Data Consulting LLC</h3>
                     <p>Led by Dr. Komi Modji</p>
                     <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>Serving English and French-speaking clients / Clients anglophones et francophones</span>
+                    </div>
+                    <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>Contact us for a consultation</span>
+                        <span>Contact us for a consultation / Contactez-nous pour une consultation</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-chart-line"></i>
@@ -378,32 +387,40 @@
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="organization" name="organization" placeholder="Organization">
-                        </div>
-                        <div class="form-group">
-                            <label for="service" class="visually-hidden">Service Type</label>
-                            <select id="service" name="service" required aria-label="Select a service type">
-                                <option value="">Select a Service</option>
-                                <option value="dashboard">Custom Dashboard Creation</option>
-                                <option value="survey">Survey Development</option>
-                                <option value="assessment">Assessment & Planning</option>
-                                <option value="needs">Needs Assessment</option>
-                                <option value="evaluation">Program Evaluation</option>
-                                <option value="modernization">Data Modernization</option>
-                                <option value="research">Applied Research</option>
-                                <option value="consultation">General Consultation</option>
+                            <label for="language" class="form-label">Preferred Language / Langue préférée</label>
+                            <select id="language" name="language" aria-label="Preferred language">
+                                <option value="en">English</option>
+                                <option value="fr">Français</option>
+                                <option value="both">Both / Les deux</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tell us about your project or needs" rows="5" required></textarea>
+                            <input type="text" id="name" name="name" placeholder="Your Name / Votre nom" required>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email / Votre courriel" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="organization" name="organization" placeholder="Organization / Organisation">
+                        </div>
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Type / Type de service</label>
+                            <select id="service" name="service" required aria-label="Select a service type">
+                                <option value="">Select a Service / Sélectionnez un service</option>
+                                <option value="dashboard">Custom Dashboard Creation / Création de tableaux de bord personnalisés</option>
+                                <option value="survey">Survey Development / Développement d'enquêtes</option>
+                                <option value="assessment">Assessment & Planning / Évaluation et planification</option>
+                                <option value="needs">Needs Assessment / Évaluation des besoins</option>
+                                <option value="evaluation">Program Evaluation / Évaluation de programme</option>
+                                <option value="modernization">Data Modernization / Modernisation des données</option>
+                                <option value="research">Applied Research / Recherche appliquée</option>
+                                <option value="consultation">General Consultation / Consultation générale</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Tell us about your project or needs / Parlez-nous de votre projet ou de vos besoins" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message / Envoyer le message</button>
                     </form>
                 </div>
             </div>

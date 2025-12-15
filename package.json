@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "live-server --port=3000 --open=/index.html",
     "start": "live-server --port=3000 --open=/index.html",
-    "serve": "http-server -p 3000 -o"
+    "serve": "http-server -p 3000 -o",
+    "vercel-build": "echo 'No build step needed for static site'"
   },
   "keywords": [
     "data-consulting",
